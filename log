@@ -20,3 +20,14 @@ Thu 20 Apr 2023 05:10:34 PM UTC:
  tests:  11|6
 total_score: 15/70
 0b3f7d2
+Thu 20 Apr 2023 05:29:08 PM UTC: 
+ treemap.c | 35 +++++++++++++++++++++++++++++++----
+ 1 file changed, 31 insertions(+), 4 deletions(-)
+In file included from test.c:4:
+treemap.c: In function ‘insertTreeMap’:
+treemap.c:57:19: error: the comparison will always evaluate as ‘true’ for the address of ‘searchTreeMap’ will never be NULL [-Werror=address]
+   57 |   if(searchTreeMap!=NULL) return;
+      |                   ^~
+cc1: all warnings being treated as errors
+Compilation failed
+7a9eaa6
