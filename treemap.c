@@ -53,6 +53,7 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
   {
     tree->root = nuevo;
     tree->current = nuevo;
+    return;
   }
   
   if(searchTreeMap(key,value)!=NULL) return;
