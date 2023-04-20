@@ -52,7 +52,6 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
   if(tree->current == NULL)
   {
     tree->root = nuevo;
-    tree->current = nuevo;
     return;
   }
   
