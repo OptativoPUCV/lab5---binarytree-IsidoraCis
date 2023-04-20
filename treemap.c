@@ -50,8 +50,7 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
   tree->current = tree->root;
   if(tree->root == NULL)
   {
-    tree->root =createTreeNode(key, value);;
-
+    tree->root =createTreeNode(key, value);
     return;
   }
   if(searchTreeMap(tree,key)!=NULL) return;
