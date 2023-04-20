@@ -54,7 +54,7 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
     tree->root = nuevo;
     return;
   }
-  if(searchTreeMap(tree,key)==NULL) return;
+  if(searchTreeMap(tree,key)!=NULL) return;
   while(tree->current != NULL)
       {
         if(tree->lower_than(tree->current->pair->key, key)){
@@ -63,20 +63,23 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
           {
             tree->current->right = nuevo;
             nuevo->parent = tree->current->right;
+            tree->current = nuevo;
             return;
           }
           tree->current=tree->current->right;
-        }
+          }
         else{//HACIA LA IZQUIERDA
           if(tree->current->left==NULL)
           {
             tree->current->left = nuevo;
             nuevo->parent = tree->current->left;
+            tree->current = nuevo;
             return;
           }
           tree->current=tree->current->left;
         }
       }
+  
   return;
 }
 
