@@ -185,6 +185,7 @@ Pair * nextTreeMap(TreeMap * tree) {
       {
         actual= actual->left;
       }
+    tree->current = actual;
     return(actual->pair);
   }
 
@@ -194,6 +195,7 @@ Pair * nextTreeMap(TreeMap * tree) {
         tree->current = padre;
         padre = padre->parent;
     }
+  tree->current = padre;
   if(padre==NULL) return NULL;
   return(padre->pair);
 }
