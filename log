@@ -354,3 +354,13 @@ Sat 22 Apr 2023 04:01:15 PM UTC:
  tests:  25|1
 total_score: 60/70
 152c9fb
+Sat 22 Apr 2023 04:20:12 PM UTC: 
+ treemap.c | 20 ++++++++++++++++++++
+ 1 file changed, 20 insertions(+)
+In file included from test.c:4:
+treemap.c: In function ‘upperBound’:
+treemap.c:171:44: error: ‘TreeMap’ has no member named ‘key’
+  171 |       if(is_equal(tree, tree->current, tree->key) == 1) return                   tree->current->pair;
+      |                                            ^~
+Compilation failed
+dc659ed
