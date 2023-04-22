@@ -192,7 +192,7 @@ Pair * nextTreeMap(TreeMap * tree) {
   while(padre!= NULL && padre->right == tree->current)
     {
         tree->current = padre;
-        padre = tree->current->parent;
+        padre = padre->parent;
     }
   if(padre==NULL) return NULL;
   return(padre->pair);
