@@ -180,8 +180,12 @@ Pair * nextTreeMap(TreeMap * tree) {
   
   if(tree->current->right != NULL)
   {
-    TreeNode* minimo = minimum(tree->current->right);
-    return(minimo->pair);
+    TreeNode* actual = tree->current->right;
+    while(actual->left != NULL)
+      {
+        actual= actual->left;
+      }
+    return(actual->pair);
   }
 
   TreeNode* padre= tree->current->parent;
