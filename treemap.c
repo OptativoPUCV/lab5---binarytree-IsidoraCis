@@ -177,23 +177,22 @@ Pair * firstTreeMap(TreeMap * tree) {
 Pair * nextTreeMap(TreeMap * tree) {
   //Si no hay current
     if(tree->current == NULL) return NULL;
-  //Si tiene solo un hijo
-  if(tree->current->left == NULL || tree->current->right == NULL)
-  {
-    //Si solo tiene hacia la derecha
-    if(tree->current->left == NULL)
-    {
-      return(tree->current->right->pair);
-    }
-    else return(tree->current->left->pair);
-  }
-
-  //Si tiene más de un hijo
-  if(tree->current->left != NULL && tree->current->right != NULL)
+  
+  if(tree->current->right != NULL)
   {
     TreeNode* minimo = minimum(tree->current->right);
     return(minimo->pair);
   }
-  
-   return NULL;
+
+  TreeNode* padre= tree->current->parent;
+  while(padre!= NULL && padre->right == tree->current)
+    {
+      if(padre < tree->current)
+      {
+        tree->current = padre;
+        padre = tree->current->parent;
+      }
+    }
+  if(padre==NULL) return NULL;
+  return(padre->pair);
 }
