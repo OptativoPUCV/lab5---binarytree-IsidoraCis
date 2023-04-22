@@ -121,9 +121,13 @@ void removeNode(TreeMap * tree, TreeNode* node) {
       free(node);
       return;
   }//Caso en el que tenga más de un hijo
-  //else if()
-  
-    
+  else{
+    TreeNode* minimo = minimun(node->right);
+    node->pair->key = minimo->pair->key;
+    node->pair->value = node->pair->value;
+    removeNode(tree, minimo);
+  }
+  return;
 }
 
 void eraseTreeMap(TreeMap * tree, void* key){
