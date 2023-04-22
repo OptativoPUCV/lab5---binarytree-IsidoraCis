@@ -162,12 +162,13 @@ Pair * searchTreeMap(TreeMap * tree, void* key) {
 
 Pair * upperBound(TreeMap * tree, void* key) {
   if(tree == NULL) return NULL;
+  
   TreeNode* ub = NULL;
   tree->current = tree->root;
   while(tree->current !=NULL)
     { 
-      if(is_equal(tree, tree->current, key) == 1) return                         tree->current->pair;
-      if(tree->lower_than(key, tree->current) == 1)
+      if(is_equal(tree, tree->current->pair->key, key) == 1) return                         tree->current->pair;
+      else if(tree->lower_than(key, tree->current->pair->key) == 1)
       {
         ub = tree->current;
         tree->current = tree->current->left;
