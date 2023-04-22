@@ -92,12 +92,12 @@ void removeNode(TreeMap * tree, TreeNode* node) {
   //Caso en el que el nodo a eliminar no tenga hijos
   if(node->left && node->right == NULL)
   {
-    if(tree->lower_than(node->parent->pair->key,node->pair->key) == 1){
+    if(tree->lower_than(node->parent->pair->key,node->pair->key) == 0){
       node->parent->right = NULL;
       free(node);
       return;
     }
-    else node->parent->right = NULL;
+    else node->parent->left = NULL;
     free(node);
     return;
   }
