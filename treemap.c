@@ -103,10 +103,11 @@ void removeNode(TreeMap * tree, TreeNode* node) {
   }
   //Caso en el que solo tenga un hijo
   else if(node->left == NULL || node->right == NULL){
+    TreeNode * hijo = NULL;
     //Si el hijo está hacia la derecha
     if(node->left == NULL)
     {
-      TreeNode * hijo = node->right;
+      hijo = node->right;
       if(node->parent->left == node) node->parent->left = hijo;
       else node->parent->right = hijo;
       hijo->parent= node->parent;
@@ -115,7 +116,7 @@ void removeNode(TreeMap * tree, TreeNode* node) {
     }//Si el hijo está hacia la izq
     else if(node->right == NULL)
     {
-      TreeNode * hijo = node->left;
+      hijo = node->left;
       if(node->parent->right == node) node->parent->right = hijo;
       else node->parent->left = hijo;
       hijo->parent= node->parent;
