@@ -110,16 +110,19 @@ void removeNode(TreeMap * tree, TreeNode* node) {
       node->right = hijo;
       if(node->parent->left == node) node->parent->left = hijo;
       else node->parent->right = hijo;
+      hijo->parent= node->parent;
+      free(node);
+      return;
     }//Si el hijo está hacia la izq
     else if(node->right == NULL)
     {
        node->left = hijo;
       if(node->parent->right == node) node->parent->right = hijo;
       else node->parent->left = hijo;
-    }
       hijo->parent= node->parent;
       free(node);
       return;
+    }
   }//Caso en el que tenga más de un hijo
   else{
     TreeNode* minimo = minimum(node->right);
