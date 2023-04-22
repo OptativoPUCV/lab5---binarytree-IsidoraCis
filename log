@@ -233,3 +233,8 @@ treemap.c:110:21: error: ‘hijo’ undeclared (first use in this function)
 treemap.c:110:21: note: each undeclared identifier is reported only once for each function it appears in
 Compilation failed
 4afd97a
+Sat 22 Apr 2023 02:45:59 PM UTC: 
+ treemap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  0|0
+5c1484d
