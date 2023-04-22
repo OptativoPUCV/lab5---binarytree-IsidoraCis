@@ -104,6 +104,8 @@ void removeNode(TreeMap * tree, TreeNode* node) {
   //Caso en el que solo tenga un hijo
   else if(node->left == NULL || node->right == NULL){
     TreeNode * hijo = node->left ? node->left : node->right;
+    if(node->parent->left == node) node->parent->left = hijo;
+    else node->parent->right=hijo;
     hijo->parent = node->parent;
     free(node);
     return;
